@@ -13,14 +13,14 @@ class Size(models.Model):
 
 class Brand(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='')
+    image = models.ImageField(upload_to='brands', null=True, blank=True)
 
     def __str__(self):
         return self.name
 
 class Cap(models.Model):
     name = models.CharField(max_length=100)
-    imege = models.ImageField(upload_to='')
+    imege = models.ImageField(upload_to='caps', null=True, blank=True)
     description = models.TextField()
     price = models.FloatField() 
     size = models.ManyToManyField(Size)
