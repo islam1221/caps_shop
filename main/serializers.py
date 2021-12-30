@@ -8,6 +8,10 @@ class CapsSerializer(serializers.ModelSerializer):
         model = Cap
         fields = '__all__'
 
+class BrandSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Brand
+        fields = '__all__'
 
 class CapCreateValidateSerializer(serializers.Serializer):
     name = serializers.CharField(min_length=1, max_length=200)

@@ -1,5 +1,6 @@
 from os import name
 from django.db import models
+from django.db.models.fields.related import ForeignKey, ManyToManyField
 
 # Create your models here.
 
@@ -30,3 +31,15 @@ class Cap(models.Model):
 
     def __str__(self):
         return self.name 
+
+    # @staticmethod
+    # def get_all_products():
+    #     return Cap.objects.all()
+
+    # @staticmethod
+    # def get_all_products_by_id(brand_id):
+    #     if brand_id:
+    #         return Cap.objects.filter(brand_id=brand_id)
+    #     else:
+    #         return Cap.get_all_products()
+
