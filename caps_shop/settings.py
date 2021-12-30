@@ -77,10 +77,17 @@ WSGI_APPLICATION = 'caps_shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+<<<<<<< HEAD
         'NAME': 'shop_db',
         'USER': 'batyr',
         'PASSWORD': '887799',
         'HOST':'localhost',
+=======
+        'NAME': 'shopdb',
+        'USER': 'esen',
+        'PASSWORD': 'essa.03.',
+        'HOST':'164.90.163.89',
+>>>>>>> 55bac2837271cd6b6c671ebd6471e0473c01eedd
         'PORT': '5432'
     }
 }
@@ -167,4 +174,7 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {},
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 55bac2837271cd6b6c671ebd6471e0473c01eedd
