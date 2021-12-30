@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'shopdb',
         'USER': 'esen',
         'PASSWORD': 'essa.03.',
-        'HOST':'localhost',
+        'HOST':'164.90.163.89',
         'PORT': '5432'
     }
 }
