@@ -10,6 +10,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'PAGE_SIZE': 3,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 # Quick-start development settings - unsuitable for production
@@ -19,9 +20,9 @@ REST_FRAMEWORK = {
 SECRET_KEY = 'django-insecure-a^kce@urmy@ey5uawx2v7hx*x!$^$%o-h7pve5kh!8)d=%i$1w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,17 +78,10 @@ WSGI_APPLICATION = 'caps_shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-<<<<<<< HEAD
         'NAME': 'shop_db',
         'USER': 'batyr',
         'PASSWORD': '887799',
         'HOST':'localhost',
-=======
-        'NAME': 'shopdb',
-        'USER': 'esen',
-        'PASSWORD': 'essa.03.',
-        'HOST':'164.90.163.89',
->>>>>>> 55bac2837271cd6b6c671ebd6471e0473c01eedd
         'PORT': '5432'
     }
 }
@@ -110,10 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -174,7 +164,3 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {},
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 55bac2837271cd6b6c671ebd6471e0473c01eedd
