@@ -1,5 +1,7 @@
 from os import name
 from django.db import models
+from django.db.models.deletion import CASCADE
+from django.db.models.fields import IntegerField
 from django.db.models.fields.related import ForeignKey, ManyToManyField
 
 # Create your models here.
@@ -23,7 +25,7 @@ class Cap(models.Model):
     name = models.CharField(max_length=100)
     imege = models.ImageField(upload_to='caps', null=True, blank=True)
     description = models.TextField()
-    price = models.FloatField() 
+    price = models.FloatField()
     size = models.ManyToManyField(Size)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
@@ -31,6 +33,15 @@ class Cap(models.Model):
 
     def __str__(self):
         return self.name 
+
+class SaleCap(models.Model):
+    name = models.ForeignKey(Cap, on_delete=models.CASCADE)
+    new_price = models.IntegerField()
+    
+    def __str__(self):
+        return self.name
+
+    
 
     # @staticmethod
     # def get_all_products():

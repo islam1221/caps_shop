@@ -1,3 +1,4 @@
+from django.db.models import fields
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from .models import *
@@ -29,3 +30,8 @@ class CapCreateValidateSerializer(serializers.Serializer):
     def validate_title(self, name):
         if Cap.objects.filter(name=name):
             raise ValidationError("This cap already exist!")
+
+class SaleCapSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SaleCap
+        fields = '__all__'

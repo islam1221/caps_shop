@@ -20,7 +20,7 @@ REST_FRAMEWORK = {
 SECRET_KEY = 'django-insecure-a^kce@urmy@ey5uawx2v7hx*x!$^$%o-h7pve5kh!8)d=%i$1w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
-    'main',
     'django_filters',
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'shop_db',
-        'USER': 'batyr',
-        'PASSWORD': '887799',
+        'USER': 'islam',
+        'PASSWORD': '80080611',
         'HOST':'localhost',
         'PORT': '5432'
     }

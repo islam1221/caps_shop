@@ -1,13 +1,15 @@
+from django.db.models import query
 from django.http import HttpRequest
 from rest_framework import pagination
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, RetrieveUpdateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
 from rest_framework.pagination import PageNumberPagination
-from .serializers import BrandSerializer, CapsSerializer, CapCreateValidateSerializer
-from .models import Brand, Cap
+from .serializers import BrandSerializer, CapsSerializer, CapCreateValidateSerializer, SaleCapSerializer
+from .models import Brand, Cap, SaleCap
 from django_filters.rest_framework import DjangoFilterBackend
+
 
 
 class CapListAPIView(ListCreateAPIView):
@@ -28,6 +30,11 @@ class BrandDetailAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = BrandSerializer
     lookup_field = 'id'
 
+class SaleCapAPIView(ListAPIView):
+    queryset = SaleCap.objects.all()
+    serializer_class = SaleCapSerializer
+    fields = 'id'
+    
 
 
 
